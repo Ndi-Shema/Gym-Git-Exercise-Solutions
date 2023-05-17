@@ -83,3 +83,144 @@ Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
 $
 ```
 
+
+
+### Exercise 2
+
+
+```
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ touch home.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ vi home.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash save "Exercise 2: Stashing"
+Saved working directory and index state On dev: Exercise 2: Stashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ vi about.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash save "Exercise 2 about: Stashing"
+No local changes to save
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git add .
+warning: in the working copy of 'about.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'home.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash save "Exercise 2 about: Stashing"
+Saved working directory and index state On dev: Exercise 2 about: Stashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ vi team.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git add .
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash save "Exercise 2 team: Stashing"
+Saved working directory and index state On dev: Exercise 2 team: Stashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash list
+stash@{0}: On dev: Exercise 2 team: Stashing
+stash@{1}: On dev: Exercise 2 about: Stashing
+stash@{2}: On dev: Exercise 2: Stashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (2786c2cdbf4afb56a3da41f5a4bf79d8b874a836)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash pop stash@{2}
+fatal: log for 'stash' only has 2 entries
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash list
+stash@{0}: On dev: Exercise 2 team: Stashing
+stash@{1}: On dev: Exercise 2: Stashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    README.MD
+
+Dropped stash@{1} (0624ee5646a27975c9e0a746ed07020c09908f22)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git add .
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git commit -m "home and about pages"
+[dev 25ff5d8] home and about pages
+ 3 files changed, 44 insertions(+), 84 deletions(-)
+ delete mode 100644 README.MD
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git push origin dev
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 1.89 KiB | 1.89 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/dev
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      dev -> dev
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash pop stash@{1}
+fatal: log for 'stash' only has 1 entries
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash list
+stash@{0}: On dev: Exercise 2 team: Stashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git stash pop stash@{0}
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (2a20a9fb7ae82b0e4da944347aca00d87e53025b)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git reset --hard HEAD
+HEAD is now at 25ff5d8 home and about pages
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$
+
+```
+
+
+
+
+
+
