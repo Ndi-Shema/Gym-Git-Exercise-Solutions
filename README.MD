@@ -221,6 +221,50 @@ $
 
 
 
+## Bundle 2
+
+### Exercise 2
+
+
+```
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/bundle-2)
+$ touch service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/bundle-2)
+$ git add .
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/bundle-2)
+$ git commit -m " addition in pages : service page"
+[ft/bundle-2 91467a3]  addition in pages : service page
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/bundle-2)
+$ git push origin ft/bundle-2
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 300 bytes | 300.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/bundle-2
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+```
+
 
 
 
