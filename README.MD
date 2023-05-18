@@ -223,7 +223,7 @@ $
 
 ## Bundle 2
 
-### Exercise 2
+### Exercise 1
 
 
 ```
