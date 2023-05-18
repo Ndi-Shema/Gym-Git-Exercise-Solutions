@@ -261,5 +261,323 @@ $
 ```
 
 
+### Exercise 2
+
+```
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/bundle-2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git pull origin main
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 1.40 KiB | 62.00 KiB/s, done.
+From https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions
+ * branch            main       -> FETCH_HEAD
+   c59592c..5e64354  main       -> origin/main
+Updating c59592c..5e64354
+Fast-forward
+ README.MD    | 21 ++++++++-------------
+ service.html |  0
+ 2 files changed, 8 insertions(+), 13 deletions(-)
+ create mode 100644 service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ $ git checkout -b ft/service-redesign
+bash: $: command not found
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ ls
+README.MD  bundle-1  service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ vi service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git add service.html
+warning: in the working copy of 'service.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git commit -m "Redesigned the service.html page"
+[ft/service-redesign ea7c71e] Redesigned the service.html page
+ 1 file changed, 41 insertions(+)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git push origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 792 bytes | 792.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/service-redesign
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ vi service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git add service.html
+warning: in the working copy of 'service.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ vi service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git add service.html
+warning: in the working copy of 'service.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git commit -m "additional changes to service.html in main"
+[main f1dbe8f] additional changes to service.html in main
+ 1 file changed, 40 insertions(+)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git push origin main
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git diff main
+diff --git a/service.html b/service.html
+index 2edd987..1015ea6 100644
+--- a/service.html
++++ b/service.html
+@@ -20,7 +20,7 @@
+
+   <section>
+     <h2>Service 1</h2>
+-    <p> Management Services.</p>
++    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur quam vitae varius malesuada. Ut a ullamcorper mauris, id cursus nisi.</p>
+   </section>
+
+   <section>
+@@ -38,3 +38,4 @@
+   </footer>
+ </body>
+ </html>
++
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git merge main
+Auto-merging service.html
+CONFLICT (content): Merge conflict in service.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign|MERGING)
+$ git commit -m "merge main branch into ft/service"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign|MERGING)
+$ git merge main
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign|MERGING)
+$ vi service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign|MERGING)
+$ git add service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign|MERGING)
+$ git commit -m "merge main branch into ft/service"
+[ft/service-redesign b211d40] merge main branch into ft/service
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git push origin ft/service-redesign
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ ! [rejected]        ft/service-redesign -> ft/service-redesign (fetch first)
+error: failed to push some refs to 'https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git diff main
+diff --git a/service.html b/service.html
+index 2edd987..066efde 100644
+--- a/service.html
++++ b/service.html
+@@ -20,7 +20,11 @@
+
+   <section>
+     <h2>Service 1</h2>
++<<<<<<< HEAD
++    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum efficitur quam vitae varius malesuada. Ut a ullamcorper mauris, id cursus nisi.</p>
++=======
+     <p> Management Services.</p>
++>>>>>>> main
+   </section>
+
+   <section>
+@@ -38,3 +42,7 @@
+   </footer>
+ </body>
+ </html>
++<<<<<<< HEAD
++
++=======
++>>>>>>> main
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 642 bytes | 160.00 KiB/s, done.
+From https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions
+ * branch            main       -> FETCH_HEAD
+   5e64354..1f96867  main       -> origin/main
+Merge made by the 'ort' strategy.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git push origin ft/service-redesign
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ ! [rejected]        ft/service-redesign -> ft/service-redesign (fetch first)
+error: failed to push some refs to 'https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 2 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git pull origin main
+From https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions
+ * branch            main       -> FETCH_HEAD
+Auto-merging service.html
+CONFLICT (content): Merge conflict in service.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main|MERGING)
+$ git checkout ft/service-redesign
+error: you need to resolve your current index first
+service.html: needs merge
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main|MERGING)
+$ git merge main
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main|MERGING)
+$ vi service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main|MERGING)
+$ git add service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main|MERGING)
+$ git commit -m "Merging main branch into ft/service-redesign"
+[main d1577a0] Merging main branch into ft/service-redesign
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git push origin ft/service-redesign
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ ! [rejected]        ft/service-redesign -> ft/service-redesign (fetch first)
+error: failed to push some refs to 'https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git pull origin ft/service-redesign
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 633 bytes | 20.00 KiB/s, done.
+From https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions
+ * branch            ft/service-redesign -> FETCH_HEAD
+   ea7c71e..56d0061  ft/service-redesign -> origin/ft/service-redesign
+Merge made by the 'ort' strategy.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git push origin ft/service-redesign
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.06 KiB | 1.06 MiB/s, done.
+Total 8 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 2 local objects.
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+   56d0061..7dd59e8  ft/service-redesign -> ft/service-redesign
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 364 bytes | 364.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+   1f96867..d1577a0  main -> main
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$
+```
+
+
 
 
