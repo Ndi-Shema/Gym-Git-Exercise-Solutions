@@ -862,3 +862,61 @@ To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
 Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
 $
 ```
+
+
+## Bundle 4
+
+### Exercise 1
+
+```
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git remote add git-copy https://github.com/Ndi-Shema/Git-exercise-clone-repo.git
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ ls
+README.MD  bundle-1  faq.html  home.html  service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ vi home.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git add .
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git commit -m "updating the home page"
+[main 6c00ea4] updating the home page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+   bffa6b4..6c00ea4  main -> main
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git push git-copy main
+Enumerating objects: 71, done.
+Counting objects: 100% (71/71), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (69/69), done.
+Writing objects: 100% (71/71), 17.90 KiB | 4.47 MiB/s, done.
+Total 71 (delta 27), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (27/27), done.
+To https://github.com/Ndi-Shema/Git-exercise-clone-repo.git
+ * [new branch]      main -> main
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$
+```
