@@ -920,3 +920,100 @@ To https://github.com/Ndi-Shema/Git-exercise-clone-repo.git
 Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
 $
 ```
+
+
+### Exercise 2
+
+```
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ ls
+README.MD  bundle-1  faq.html  home.html  service.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ vi footer.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ git add footer.html
+warning: in the working copy of 'footer.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ git commit -m "footer page"
+[ft/footer 900cd62] footer page
+ 1 file changed, 4 insertions(+)
+ create mode 100644 footer.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ vi footer.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ git add .
+warning: in the working copy of 'footer.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ git commit -m "more changes in the footer page"
+[ft/footer 631bd00] more changes in the footer page
+ 1 file changed, 1 insertion(+)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 2.64 KiB | 2.64 MiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/footer
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/footer -> ft/footer
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/squashing)
+$ git merge --squash ft/footer
+Updating 6c00ea4..631bd00
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 footer.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing 043d726] footer changes squashing
+ 1 file changed, 5 insertions(+)
+ create mode 100644 footer.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/squashing)
+$ git push origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/squashing
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/squashing)
+$
+```
