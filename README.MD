@@ -1017,3 +1017,15 @@ To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
 Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/squashing)
 $
 ```
+
+
+## Bundle 5
+
+### Exercise 1
+
+```
+Github page: https://ndi-shema.github.io/Gym-Git-Exercise-Solutions/
+```
+
+
+### Exercise 2
