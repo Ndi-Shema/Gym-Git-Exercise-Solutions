@@ -580,4 +580,211 @@ $
 
 
 
+## Bundle 3
+
+
+### Exercise 1
+
+
+```
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ vi team.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git add team.html
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git commit -m "new team page"
+[ft/team-page bf2f5fa] new team page
+ 1 file changed, 21 insertions(+)
+ create mode 100644 team.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git push origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 525 bytes | 262.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/team-page
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/team-page -> ft/team-page
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/contact-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git log
+commit bf2f5fa13c1e8b5a588fa3b103ab4d6238dc4191 (HEAD -> ft/team-page, origin/ft/team-page)
+Author: Ndi-Shema <f.shema@alustudent.com>
+Date:   Fri May 19 01:28:19 2023 +0200
+
+    new team page
+
+commit 2660016b68c65c28894867b6f0519de7183376f5 (origin/main, main, ft/contact-page)
+Author: Ndi-Shema <106658796+Ndi-Shema@users.noreply.github.com>
+Date:   Fri May 19 00:53:01 2023 +0200
+
+    Update README.MD
+
+commit d1577a05e7a352ec2509d14d2ba266200b58ab74
+Merge: f1dbe8f 1f96867
+Author: Ndi-Shema <f.shema@alustudent.com>
+Date:   Fri May 19 00:45:16 2023 +0200
+
+    Merging main branch into ft/service-redesign
+
+commit f1dbe8fd1756b1ddc62da9b868a55031763c3c31
+Author: Ndi-Shema <f.shema@alustudent.com>
+Date:   Fri May 19 00:20:11 2023 +0200
+
+    additional changes to service.html in main
+
+commit 1f96867002a29f5247d539fa4d038054b90051fc
+Merge: 5e64354 ea7c71e
+Author: Ndi-Shema <106658796+Ndi-Shema@users.noreply.github.com>
+Date:   Fri May 19 00:16:25 2023 +0200
+
+    Merge pull request #4 from Ndi-Shema/ft/service-redesign
+
+    Redesigned the service.html page
+
+commit ea7c71eeae6ebc27535eaae7f98ad27a8b56b75c
+Author: Ndi-Shema <f.shema@alustudent.com>
+Date:   Fri May 19 00:10:35 2023 +0200
+
+    Redesigned the service.html page
+
+commit 5e64354df9e30c4aaa3641b603d995b6f84fab1b
+Author: Ndi-Shema <106658796+Ndi-Shema@users.noreply.github.com>
+Date:   Fri May 19 00:04:45 2023 +0200
+
+    Update README.MD
+
+commit 000f364a6967d23bf4d2e9da15294b775a7de014
+Merge: c59592c f6113ad
+Author: Ndi-Shema <106658796+Ndi-Shema@users.noreply.github.com>
+Date:   Thu May 18 23:54:56 2023 +0200
+
+    Merge pull request #3 from Ndi-Shema/ft/bundle-2
+
+    service page added
+
+commit f6113ade91b48ba8c57dffd8b88ece1ba5619758 (origin/ft/bundle-2, ft/bundle-2)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git checkout ft/contact-page
+Switched to branch 'ft/contact-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/contact-page)
+$ git cherry-pick bf2f5fa13c1e8b5a588fa3b103ab4d6238dc4191
+[ft/contact-page bd3535e] new team page
+ Date: Fri May 19 01:28:19 2023 +0200
+ 1 file changed, 21 insertions(+)
+ create mode 100644 team.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/contact-page)
+$ git add .
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/contact-page)
+$ git commit -m "contact page"
+On branch ft/contact-page
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/contact-page)
+$ git push origin ft/contact-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 530 bytes | 265.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/contact-page
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/contact-page)
+$ git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/faq-page)
+$ vi faq.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/faq-page)
+$ git add faq.html
+warning: in the working copy of 'faq.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/faq-page)
+$ git commit -m "adding a faq.html page"
+[ft/faq-page 03bc44d] adding a faq.html page
+ 1 file changed, 22 insertions(+)
+ create mode 100644 faq.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/faq-page)
+$ git push origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 443 bytes | 443.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/faq-page
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/faq-page)
+$ git checkout ft/team-page
+Switched to branch 'ft/team-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git revert bf2f5fa13c1e8b5a588fa3b103ab4d6238dc4191
+[ft/team-page 4dbb94b] Revert "new team page"
+ 1 file changed, 21 deletions(-)
+ delete mode 100644 team.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$ git push origin ft/team-page
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 281 bytes | 281.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+   bf2f5fa..4dbb94b  ft/team-page -> ft/team-page
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
+$
+```
+
 
