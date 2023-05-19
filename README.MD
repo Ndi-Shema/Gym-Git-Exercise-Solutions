@@ -1029,3 +1029,53 @@ Github page: https://ndi-shema.github.io/Gym-Git-Exercise-Solutions/
 
 
 ### Exercise 2
+
+```
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git clone https://github.com/Ndi-Shema/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 107 (delta 5), reused 4 (delta 4), pack-reused 100
+Receiving objects: 100% (107/107), 1.95 MiB | 2.44 MiB/s, done.
+Resolving deltas: 100% (5/5), done.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ cd git-cafe-exercise/
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$ la
+bash: la: command not found
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$ ls
+README.md  css/     index-1.html  index-3.html  index.html
+bat/       images/  index-2.html  index-4.html  js/
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$ vi index.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$ git add .
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$ git commit -m "welcome message changed to Restaurant"
+[main f9a06fb] welcome message changed to Restaurant
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 340 bytes | 340.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Ndi-Shema/git-cafe-exercise.git
+   d1d3f9c..f9a06fb  main -> main
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises/git-cafe-exercise (main)
+$
+```
