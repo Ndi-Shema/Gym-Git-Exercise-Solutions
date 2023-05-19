@@ -787,4 +787,78 @@ Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/team-page)
 $
 ```
 
+### Exercise 2
 
+``` 
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/faq-page)
+$ git checkout -b ft/home-page-redesign ft/faq-page
+Switched to a new branch 'ft/home-page-redesign'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ ls
+README.MD  bundle-1  faq.html  service.html  team.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ vi home.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git add .
+warning: in the working copy of 'home.html', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git commit -m "updating the home page"
+[main 6c7d9cd] updating the home page
+ 1 file changed, 46 insertions(+)
+ create mode 100644 home.html
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 711 bytes | 711.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+   c549195..6c7d9cd  main -> main
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (main)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
+$ git add .
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
+$ git commit -m "Rebasing home page"
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
+$ git push origin ft/home-page-redesign
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/Ndi-Shema/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+
+Lenovo@DESKTOP-CF2VEAG MINGW64 ~/Bundle_exercises (ft/home-page-redesign)
+$
+```
